@@ -31,18 +31,42 @@ $(document).ready(function() {
   window.word = "";
 
 
-  function choose_word() {
+  function get_random_definition() {
     var random_number = Math.floor(Math.random() * possible_words.length);
     var selected_word = possible_words[random_number];
+    return selected_word;
+  }
+
+
+  function choose_word() {
+    var selected_word = get_random_definition();
     window.word = selected_word[0];
     window.hint = selected_word[1];
   }
 
 
   function choose_answers() {
-    for (var i = 1; i <= 3; i++) {
+    var answers = [];
+    answers.push([window.word, window.hint]);
+
+    while (answers.length <= 4) {
+      var new_answer = get_random_definition();
+
+      var exists = false;
+      for (var j = 0; j < answers.length; j++) {
+        if (answers[j][0] == new_answer[0] || answers[j][1] == new_answer[1]) {
+          exists = true;
+        }
+      }
+
+      if (!exists) {
+        answers.push(new_answer);
+      }
+    }
+
+    for (var i = 0; i < answers.length; i++) {
       $("p.controls").append(
-        "<a href='#' class='btn btn-warning btn-answer'>Nume</a>"
+        "<a href='#' class='btn btn-warning btn-answer'>" + answers[i][0].toUpperCase() + "</a>"
       );
     }
   }
