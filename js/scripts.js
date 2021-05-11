@@ -39,6 +39,15 @@ $(document).ready(function() {
   }
 
 
+  function choose_answers() {
+    for (var i = 1; i <= 3; i++) {
+      $("p.controls").append(
+        "<a href='#' class='btn btn-warning btn-answer'>Nume</a>"
+      );
+    }
+  }
+
+
   function game_over() {
     $("p#status").text("Răspuns corect: " + window.word.toUpperCase());
     game_is_finished = true;
@@ -54,6 +63,7 @@ $(document).ready(function() {
 
   function start_game() {
     choose_word();
+    choose_answers();
     $("p#status").text("Descriere: " + window.hint);
   }
 
