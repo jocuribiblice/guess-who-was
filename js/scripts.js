@@ -103,6 +103,18 @@ $(document).ready(function() {
   function start_game() {
     choose_word();
     choose_answers();
+
+    $("a.btn.btn-answer").on("click", function(evt) {
+      evt.preventDefault();
+      var answer = $(this).text();
+      if (answer == window.word.toUpperCase()) {
+        $(this).removeClass("btn-warning").addClass("btn-success");
+        win();
+      } else {
+        $(this).removeClass("btn-warning").addClass("btn-danger");
+      }
+    });
+
     $("p#status").text("Descriere: " + window.hint);
   }
 
