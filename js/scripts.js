@@ -100,9 +100,24 @@ $(document).ready(function() {
   }
 
 
+  function filename(word) {
+    var filenames = {
+      "lazăr": "lazar"
+    }
+    var res = filenames[word];
+    if (res == undefined) {
+      return word;
+    } else {
+      return res;
+    }
+  }
+
+
   function start_game() {
     choose_word();
     choose_answers();
+
+    $("div.img-people-container").append("<img class='people' src='./assets/people/large/" + filename(window.word) + ".png' />");
 
     $("a.btn.btn-answer").on("click", function(evt) {
       evt.preventDefault();
