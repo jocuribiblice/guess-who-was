@@ -31,6 +31,20 @@ $(document).ready(function() {
   window.word = "";
 
 
+  function shuffle(array) {
+    var currentIndex = array.length, temporaryValue, randomIndex;
+
+    while (0 !== currentIndex) {
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+      temporaryValue = array[currentIndex];
+      array[currentIndex] = array[randomIndex];
+      array[randomIndex] = temporaryValue;
+    }
+    return array;
+  }
+
+
   function get_random_definition() {
     var random_number = Math.floor(Math.random() * possible_words.length);
     var selected_word = possible_words[random_number];
@@ -64,9 +78,10 @@ $(document).ready(function() {
       }
     }
 
-    for (var i = 0; i < answers.length; i++) {
+    var randomized_answers = shuffle(answers);
+    for (var i = 0; i < randomized_answers.length; i++) {
       $("p.controls").append(
-        "<a href='#' class='btn btn-warning btn-answer'>" + answers[i][0].toUpperCase() + "</a>"
+        "<a href='#' class='btn btn-warning btn-answer'>" + randomized_answers[i][0].toUpperCase() + "</a>"
       );
     }
   }
