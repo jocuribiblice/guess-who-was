@@ -117,7 +117,7 @@ $(document).ready(function() {
     choose_word();
     choose_answers();
 
-    $("div.img-people-container").append("<img class='people' src='./assets/people/large/" + filename(window.word) + ".png' />");
+    $("div.img-people-container").append("<img class='people' src='./assets/people/small/" + filename(window.word) + ".png' />");
 
     $("a.btn.btn-answer").on("click", function(evt) {
       evt.preventDefault();
