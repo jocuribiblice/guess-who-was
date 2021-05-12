@@ -1,6 +1,11 @@
 Changelog
 =========
 
+1.1.2 - (unreleased)
+--------------------
+* Improve: better definitions, unique, and clear.
+  [GhitaB]
+
 1.1.1 - (2021-05-11)
 --------------------
 * Fix: better definitions.
