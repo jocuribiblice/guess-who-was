@@ -1,9 +1,10 @@
 Changelog
 =========
 
-1.1.2 - (unreleased)
+1.1.2 - (2021-05-16)
 --------------------
 * Improve: better definitions, unique, and clear.
+* Improve: simplify content and layout.
   [GhitaB]
 
 1.1.1 - (2021-05-11)
