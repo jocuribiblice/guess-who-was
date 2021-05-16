@@ -3,8 +3,7 @@ Changelog
 
 1.1.3 - (2021-05-16)
 --------------------
-* Improve: better definitions, unique, and clear.
-* Improve: simplify content and layout.
+* Improve: better layout.
   [GhitaB]
 
 1.1.2 - (2021-05-16)
